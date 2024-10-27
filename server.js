@@ -13,6 +13,9 @@ if (!process.env.IS_TEST_ENV) {
     app.use(logger('dev'));
 }
 
+const apiRouter = require('./api/api');
+app.use('/api', apiRouter);
+
 const PORT = process.env.PORT || 4001;
 
 app.listen(PORT, () => {
